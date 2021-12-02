@@ -14,6 +14,7 @@ namespace CrowdFundingProjectTeam4.Model
         public DbSet<UserProject> UserProject { get; set; }
         public DbSet<FundingPackage> FundingPackage { get; set; }
         public DbSet<StatusUpdate> StatusUpdate { get; set; }
+        public object Category { get; internal set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
