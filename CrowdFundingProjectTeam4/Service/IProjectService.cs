@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace CrowdFundingProjectTeam4.Service
 {
-    public interface IUserActionsService
+    public interface ProjectService
     {
-        public User GetUser(int id);
+        public Project UpdateProject(int id);
+        public Project DeleteProject(int id);
     }
 }
