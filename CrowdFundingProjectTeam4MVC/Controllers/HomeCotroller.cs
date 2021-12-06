@@ -1,4 +1,5 @@
 ﻿using CrowdFundingProjectTeam4.Model;
+using CrowdFundingProjectTeam4.Service;
 using CrowdFundingProjectTeam4MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -20,11 +21,8 @@ namespace CrowdFundingProjectTeam4MVC.Controllers
             _logger = logger;
         }
 
-        private IProjectService projectService;
-
         public IActionResult Index()
         {
-            List<Project> projects = projectService.ReadProject(1, 10);
             return View();
         }
 

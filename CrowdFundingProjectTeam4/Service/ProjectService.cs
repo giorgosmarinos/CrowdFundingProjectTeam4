@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CrowdFundingProjectTeam4.Service
 {
-    public class ProjectService : IProjectService
+    public class ProjectService : IProjectService  
     {
         private readonly CrowdFundingTeam4DBContext _db;
 
@@ -16,6 +16,7 @@ namespace CrowdFundingProjectTeam4.Service
             _db = dbContext;
         }
 
+        /*
         public Project UpdateProject(int ProjectId, Project project)
         {
             var dbProject = _db.Project.Find(ProjectId);
@@ -31,7 +32,7 @@ namespace CrowdFundingProjectTeam4.Service
             _db.SaveChanges();
             return dbProject;
 
-        }
+        } */
 
         public bool DeleteProject(int id)
         {
@@ -52,20 +53,28 @@ namespace CrowdFundingProjectTeam4.Service
         {
             if (pageCount <= 0) pageCount = 1;
             if (pageSize <= 0 || pageSize > 20) pageSize = 20;
-            return _db.Projects
+            return _db.Project
                 .Skip((pageCount - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
         }
 
-        public Project UpdateProject(int id)
+        public Project UpdateProject(int projectId, Project project)
         {
-            throw new NotImplementedException();
+            var dbProject = _db.Project.Find(projectId);
+            if (dbProject == null) throw new KeyNotFoundException();
+            dbProject.Title = project.Title;
+            dbProject.Description = project.Description;
+            dbProject.MoneyGoal = project.MoneyGoal;
+            dbProject.CurrentBalance = project.CurrentBalance;
+            dbProject.DueDate = project.DueDate;
+            dbProject.MinFund = project.MinFund;
+            dbProject.MaxFund = project.MaxFund;
+
+            _db.SaveChanges();
+            return dbProject;
+
         }
 
-        Project IProjectService.DeleteProject(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

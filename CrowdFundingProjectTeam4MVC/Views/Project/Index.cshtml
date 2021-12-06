@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<CrowdFundingProjectTeam4.Model.Project>
+
+<p>This is the home page for projects</p>
+@foreach (var item in Model)
+{
+    @item.Title
+    <br />
+}
