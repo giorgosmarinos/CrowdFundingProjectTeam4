@@ -10,15 +10,14 @@ namespace CrowdFundingProjectTeam4.Services
     interface IFundable
     {
         
+        public Project ReadCategory(int ProjectId, Category category);
 
-        public Project GetCategory(int ProjectId, Category category);
-
-        public Project ReadProjectFund(int ProjectId, decimal Fund);
-
-        List<FundingPackage> GetFundingPackages(int projectId);
-        
+        public Project ReadProjectFund(int ProjectId);
+                      
         Project ReadProject(int ProjetcId, Project project);
         
         List<FundingPackage> ReadProject(int ProjectId);
+        
+        List<FundingPackage> ReadFundingPackeages(int projectId);
     }
 }

@@ -10,46 +10,29 @@ namespace CrowdFundingProjectTeam4.Services
     public class FundableService : IFundable
     {
 
-        private readonly CrowdFundingTeam4DBContext _dbContext;
-        private object[] projectId;
-        private object _db;
-
-        public CrowdFundingTeam4DBContext Db => _dbContext;
-
+        private readonly CrowdFundingTeam4DBContext _db;
+        
+         
         public FundableService(CrowdFundingTeam4DBContext dbContext)
         {
-            _dbContext = dbContext;
+            _db = dbContext;
         }
 
-        public Project ChangeProjectFund(int ProjectId, decimal Fund)
+        public Project ReadProjectFund(int ProjectId, decimal Fund)
         {
             throw new NotImplementedException();
         }
 
-        public bool DeleteProject(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Project ReadProject(int ProjectId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Project ReadProject(int ProjectId, Project project)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         List<FundingPackage> IFundable.ReadProject(int ProjectId)
         {
             throw new NotImplementedException();
         }
 
 
-        public Project ReadProject (int ProjetcId, Project project)
+        public Project ReadProject (int ProjectId, Project project)
         {
-            var dbProject = _dbContext.Project.Find(projectId);
+            var dbProject = _db.Project.Find(ProjectId);
             if (dbProject == null) throw new KeyNotFoundException();
             dbProject.Name = project.Name;
             dbProject.Trending = project.Trending;
@@ -62,29 +45,13 @@ namespace CrowdFundingProjectTeam4.Services
 
         }
 
-        public void CreateFunding(FundingPackage fundingPackage)
+               
+
+
+        public List<FundingPackage> ReadFundingPackeages(int projectId)
         {
-            _dbContext.FundingPackage.Add(fundingPackage);
-            try { _dbContext.SaveChanges();}
-            catch { }
-
-        }
-
-        public List<FundingPackage> GetFundingPackages(int projectId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<FundingPackage> ReadProject()
-        {
-            _dbContext.FundingPackage.ToList();
-        }
-
-
-        public List<FundingPackage> GetFundingPackeages(int fundingPackage)
-        {
-            var FundingPackage = from FundingPackage in Db.Project
-                                  orderby FundingPackage.Count ascending
+            var FundingPackage = from FundingPackage in _db.Project
+                                  orderby FundingPackage.Count descending
                                   select FundingPackage;
 
         }
