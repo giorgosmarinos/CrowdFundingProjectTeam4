@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace CrowdFundingProjectTeam4.Service
 {
-    public class StatusService: StatusService
+    public class StatusService : StatusService
     {
-        private readonly CrowdFundingTeam4DBContext dbContext;
+        private readonly CrowdFundingTeam4DBContext _db;
 
-        public StatusService(CrowdFundingTeam4DBContext adbContext)
+        public StatusService(CrowdFundingTeam4DBContext dbContext)
         {
             _db = dbContext;
         }
@@ -20,7 +20,7 @@ namespace CrowdFundingProjectTeam4.Service
         {
             var dbProjectStatus = _db.StatusUpdate.Find(StatusUpdateId);
             //mallon h epomenh grammh kwdika den xreiazetai 
-            if (dbProjectStatus == null) throw new KeyNotFoundException(); 
+            if (dbProjectStatus == null) throw new KeyNotFoundException();
             dbStatusUpdate.ProjectId = statusupdate.ProjectId
             dbStatusUpdate.Description = statusupdate.Description;
             dbStatusUpdate.StatusTime = statusupdate.StatusTime;
@@ -33,7 +33,7 @@ namespace CrowdFundingProjectTeam4.Service
         public bool DeleteStatusProject(int id)
         {
             var dbProjectStatus = _db.StatusUpdate.Find(id);
-            if (dbProjectStatus == null) return false; 
+            if (dbProjectStatus == null) return false;
             _db.Project.Remove(dbProjectStatus);
             return _db.SaveChanges() == 1;
         }

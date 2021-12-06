@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace CrowdFundingProjectTeam4.Service
 {
-    public class ProjectService: ProjectService
+    public class ProjectService : IProjectService
     {
-        private readonly CrowdFundingTeam4DBContext dbContext;
+        private readonly CrowdFundingTeam4DBContext _db;
 
-        public ProjectService(CrowdFundingTeam4DBContext adbContext)
+        public ProjectService(CrowdFundingTeam4DBContext dbContext)
         {
             _db = dbContext;
         }
@@ -39,6 +39,33 @@ namespace CrowdFundingProjectTeam4.Service
             if (dbProject == null) return false;
             _db.Project.Remove(dbProject);
             return _db.SaveChanges() == 1;
+        }
+
+        //create also read project in order to test the connection with MVC 
+        public Project ReadProject(int id)
+        {
+            return _db.Project.Find(id);
+        }
+
+        //create also read project in order to test the connection with MVC 
+        public List<Project> ReadProject(int pageCount, int pageSize)
+        {
+            if (pageCount <= 0) pageCount = 1;
+            if (pageSize <= 0 || pageSize > 20) pageSize = 20;
+            return _db.Projects
+                .Skip((pageCount - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+        }
+
+        public Project UpdateProject(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Project IProjectService.DeleteProject(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

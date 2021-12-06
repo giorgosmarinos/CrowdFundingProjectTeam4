@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace CrowdFundingProjectTeam4MVC.Controllers
 {
     public class HomeController : Controller
@@ -19,9 +20,11 @@ namespace CrowdFundingProjectTeam4MVC.Controllers
             _logger = logger;
         }
 
+        private IProjectService projectService;
+
         public IActionResult Index()
         {
-            List<User> user = userService.ReadUser(1, 10);
+            List<Project> projects = projectService.ReadProject(1, 10);
             return View();
         }
 
