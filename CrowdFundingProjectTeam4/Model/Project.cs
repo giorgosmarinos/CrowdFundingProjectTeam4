@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CruwdFundingProjectTeam4.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -19,8 +20,8 @@ namespace CrowdFundingProjectTeam4.Model
         public decimal MinFund { get; set; }
         public decimal MaxFund { get; set; }
         public int UserId { get; set; }
-        public virtual List<UserProject> ListofBackers { get; set; } //check if virtual keyword is necessary 
-        public virtual List<FundingPackage> ListofFundingPackages { get; set; } //check if virtual keyword is necessary 
-        public virtual List<StatusUpdate> ListofStatusUpdates { get; set; } //check if virtual keyword is necessary 
+        public  List<UserProject> ListofBackers { get; set; } //check if virtual keyword is necessary 
+        public  List<FundingPackage> ListofFundingPackages { get; set; } //check if virtual keyword is necessary 
+        public  List<StatusUpdate> ListofStatusUpdates { get; set; } //check if virtual keyword is necessary 
     }
 }

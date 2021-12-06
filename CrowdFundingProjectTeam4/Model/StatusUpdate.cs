@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CrowdFundingProjectTeam4.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrowdFundingProjectTeam4.Model
+namespace CruwdFundingProjectTeam4.Model
 {
     public class StatusUpdate
     {
@@ -13,5 +14,6 @@ namespace CrowdFundingProjectTeam4.Model
         public string Description { get; set; }
         public DateTime StatusTime { get; set; }
 
+        public Project Project { get; set; }
     }
 }

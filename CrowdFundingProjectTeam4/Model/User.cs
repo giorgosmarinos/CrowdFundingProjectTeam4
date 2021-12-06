@@ -1,14 +1,15 @@
-﻿using System;
+﻿using CrowdFundingProjectTeam4.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrowdFundingProjectTeam4.Model
+namespace CruwdFundingProjectTeam4.Model
 {
     public class User
-    {   
+    {
         public int UserId { get; set; }
         [Required]
         [MaxLength(50)]
@@ -19,9 +20,10 @@ namespace CrowdFundingProjectTeam4.Model
         [Required]
         public string Email { get; set; }
         public DateTime? DateOfBirth { get; set; }
-        public virtual List<Project> CreatedProject { get; set; } //check if it is necessary
-        public virtual List<UserProject> FundedProject { get; set; }
 
 
+        public virtual List<UserFundingPackage> AssignedFundingPackages { get; set; } = new();
+        public List<Project> CreatedProject { get; set; } = new();
+        public List<UserProject> FundedProject { get; set; } = new();
     }
 }
