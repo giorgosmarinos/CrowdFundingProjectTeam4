@@ -12,5 +12,9 @@ namespace CrowdFundingProjectTeam4.Model
         public int Project { get; set;}
         public decimal Value { get; set; }
         public string Reward { get; set; }
+
+        
     }
+
+
 }

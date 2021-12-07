@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CrowdFundingProjectTeam4.Services
 {
-    public class FundableService : IFundable
+    public class FundableService : IFundableService
     {
 
         private readonly CrowdFundingTeam4DBContext _db;
@@ -24,7 +24,7 @@ namespace CrowdFundingProjectTeam4.Services
         }
 
         
-        List<FundingPackage> IFundable.ReadProject(int ProjectId)
+        List<FundingPackage> IFundableService.ReadProject(int ProjectId)
         {
             throw new NotImplementedException();
         }
@@ -57,7 +57,7 @@ namespace CrowdFundingProjectTeam4.Services
                
 
 
-        public List<FundingPackage> ReadFundingPackeages(int FundingPackageId)
+        public List<FundingPackage> ReadFundingPackages(int FundingPackageId)
         {
             var FundingPackage = from FundingPackage in _db.Project
                                   orderby FundingPackage.Count descending
@@ -65,6 +65,5 @@ namespace CrowdFundingProjectTeam4.Services
 
         }
 
-       
-    }
+        
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CrowdFundingProjectTeam4.Services
 {
-    interface IFundable
+    interface IFundableService
     {
         
         public Project ReadCategory(int ProjectId, Category category);
@@ -18,6 +18,7 @@ namespace CrowdFundingProjectTeam4.Services
         
         List<FundingPackage> ReadProject(int ProjectId);
         
-        List<FundingPackage> ReadFundingPackeages(int projectId);
-    }
+        List<FundingPackage> ReadFundingPackages(int projectId);
+
+        
 }
