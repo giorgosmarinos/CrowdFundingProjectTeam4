@@ -48,7 +48,7 @@ namespace CrowdFundingProjectTeam4.Services
                
 
 
-        public List<FundingPackage> ReadFundingPackeages(int projectId)
+        public List<FundingPackage> ReadFundingPackeages(int FundingPackageId)
         {
             var FundingPackage = from FundingPackage in _db.Project
                                   orderby FundingPackage.Count descending
@@ -56,6 +56,14 @@ namespace CrowdFundingProjectTeam4.Services
 
         }
 
-       
+        public Project ReadCategory(int ProjectId, Category category)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Project ReadProjectFund(int ProjectId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
