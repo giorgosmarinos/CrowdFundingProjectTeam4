@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowdFundingProjectTeam4", "CrowdFundingProjectTeam4\CrowdFundingProjectTeam4.csproj", "{E9159F7C-60F7-4447-A16F-BE6899F64651}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FundableMvc", "WebApplication1\FundableMvc.vbproj", "{254C9DC9-01E9-4BAA-8146-70E02302ACE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundableMvc", "FundableMvc\FundableMvc.csproj", "{C4EDEAF5-5E88-4340-9AF4-B1ACDB1CDC53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{E9159F7C-60F7-4447-A16F-BE6899F64651}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9159F7C-60F7-4447-A16F-BE6899F64651}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9159F7C-60F7-4447-A16F-BE6899F64651}.Release|Any CPU.Build.0 = Release|Any CPU
-		{254C9DC9-01E9-4BAA-8146-70E02302ACE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{254C9DC9-01E9-4BAA-8146-70E02302ACE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{254C9DC9-01E9-4BAA-8146-70E02302ACE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{254C9DC9-01E9-4BAA-8146-70E02302ACE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4EDEAF5-5E88-4340-9AF4-B1ACDB1CDC53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4EDEAF5-5E88-4340-9AF4-B1ACDB1CDC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4EDEAF5-5E88-4340-9AF4-B1ACDB1CDC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4EDEAF5-5E88-4340-9AF4-B1ACDB1CDC53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

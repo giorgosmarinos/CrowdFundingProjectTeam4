@@ -29,6 +29,15 @@ namespace CrowdFundingProjectTeam4.Services
             throw new NotImplementedException();
         }
 
+        public Project ReadCategory(int ProjectId, Category category)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Project ReadProjectFund(int ProjectId)
+        {
+            throw new NotImplementedException();
+        }
 
         public Project ReadProject (int ProjectId, Project project)
         {
@@ -56,14 +65,6 @@ namespace CrowdFundingProjectTeam4.Services
 
         }
 
-        public Project ReadCategory(int ProjectId, Category category)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Project ReadProjectFund(int ProjectId)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
