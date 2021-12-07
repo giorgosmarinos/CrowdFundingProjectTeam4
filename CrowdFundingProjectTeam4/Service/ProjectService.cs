@@ -62,7 +62,7 @@ namespace CrowdFundingProjectTeam4.Service
         public Project UpdateProject(int projectId, Project project)
         {
             var dbProject = _db.Project.Find(projectId);
-            if (dbProject == null) throw new KeyNotFoundException();
+            if (dbProject == null) throw new KeyNotFoundException(); //try - catch instead of keynotfoundexception
             dbProject.Title = project.Title;
             dbProject.Description = project.Description;
             dbProject.MoneyGoal = project.MoneyGoal;

@@ -22,5 +22,8 @@ namespace CrowdFundingProjectTeam4.Model
         public virtual List<UserProject> ListofBackers { get; set; } //check if virtual keyword is necessary 
         public virtual List<FundingPackage> ListofFundingPackages { get; set; } //check if virtual keyword is necessary 
         public virtual List<StatusUpdate> ListofStatusUpdates { get; set; } //check if virtual keyword is necessary 
+        public string Genre { get; set; }
+        //public virtual List<ProjectGenres> ListofProjectGenres { get; set; } //check if virtual keyword is necessary 
+
     }
 }
