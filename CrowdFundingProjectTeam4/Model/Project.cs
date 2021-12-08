@@ -26,6 +26,6 @@ namespace CrowdFundingProjectTeam4.Model
         public object Category { get; internal set; }
         public object Trending { get; internal set; }
         public object FundPackage { get; internal set; }
-        public Category Category { get; set; }
+        public Category 
         
 }
