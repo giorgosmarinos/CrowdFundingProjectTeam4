@@ -11,8 +11,8 @@ namespace CrowdFundingProjectTeam4.Services
     {
 
         private readonly CrowdFundingTeam4DBContext _db;
-        
-         
+
+
         public FundableService(CrowdFundingTeam4DBContext dbContext)
         {
             _db = dbContext;
@@ -23,7 +23,7 @@ namespace CrowdFundingProjectTeam4.Services
             throw new NotImplementedException();
         }
 
-        
+
         List<FundingPackage> IFundableService.ReadProject(int ProjectId)
         {
             throw new NotImplementedException();
@@ -39,7 +39,7 @@ namespace CrowdFundingProjectTeam4.Services
             throw new NotImplementedException();
         }
 
-        public Project ReadProject (int ProjectId, Project project)
+        public Project ReadProject(int ProjectId, Project project)
         {
             var dbProject = _db.Project.Find(ProjectId);
             if (dbProject == null) throw new KeyNotFoundException();
@@ -54,16 +54,16 @@ namespace CrowdFundingProjectTeam4.Services
 
         }
 
-               
+
 
 
         public List<FundingPackage> ReadFundingPackages(int FundingPackageId)
         {
             var FundingPackage = from FundingPackage in _db.Project
-                                  orderby FundingPackage.Count descending
-                                  select FundingPackage;
+                                 orderby FundingPackage.Count descending
+                                 select FundingPackage;
 
         }
 
-        
+    }
 }
