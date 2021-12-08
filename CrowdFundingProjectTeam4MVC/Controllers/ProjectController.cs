@@ -73,5 +73,59 @@ namespace CrowdFundingProjectTeam4MVC.Controllers
         {
             return "From [HttpPost]Index: filter on " + searchString;
         }
+
+        // GET: Project/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var project = await _context.Project.FindAsync(id);
+            if (project == null)
+            {
+                return NotFound();
+            }
+            return View(project);
+        }
+
+        // POST: Project/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("ProjectId,Title,Description,MoneyGoal,CurrentBalance,DueDate,MinFund,MaxFund,UserId,Genre")] Project project)
+        {
+            if (id != project.ProjectId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(project);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ProjectExists(project.ProjectId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(project);
+        }
+
+        private bool ProjectExists(int projectId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
