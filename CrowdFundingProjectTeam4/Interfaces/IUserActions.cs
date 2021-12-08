@@ -10,16 +10,16 @@ namespace CruwdFundingProjectTeam4.Interfaces
     public interface IUserService
     {
         // CRUD - READ
-        public List<Project> ReadCreatedProjects(int userid);
-        public List<Project> ReadFundedProjects(int userid);
-        public User ReadUser(int id);
-        public List<User> ReadUser();
+        List<Project> ReadCreatedProjects(int userid);
+        List<Project> ReadFundedProjects(int userid);
+        User ReadUser(int id);
+        List<User> ReadUser();
 
         // CRUD - CREATE
-        public List<FundingPackage> CreateFundPackage(FundingPackage fundpackage, int projectid);
-        public StatusUpdate CreateStatusUpdate(StatusUpdate statusupdate, int projectid);
-        public void CreateProject(Project project, int userid);
-        public void CreateUser(User user);
-        public void Fund(UserProject userFundsProject, UserFundingPackage userGetFundingPackage);
+        List<FundingPackage> CreateFundPackage(FundingPackage fundpackage, int projectid);
+        StatusUpdate CreateStatusUpdate(StatusUpdate statusupdate, int projectid);
+        void CreateProject(Project project, int userid);
+        void CreateUser(User user);
+        void Fund(UserProject userFundsProject, UserFundingPackage userGetFundingPackage);
     }
 }

@@ -16,6 +16,6 @@ namespace CruwdFundingProjectTeam4.Model
         public int ProjectId { get; set; }
         public Project OwnedByProject { get; set; }
 
-        public List<UserFundingPackage> AssignToUser { get; set; }
+        public virtual List<UserFundingPackage> AssignToUser { get; set; }
     }
 }

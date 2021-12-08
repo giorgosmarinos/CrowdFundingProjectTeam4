@@ -161,7 +161,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\DTOConverters.cs" />
+    <Compile Include="DTOs\FundingPackageDTO.cs" />
+    <Compile Include="DTOs\ProjectDTO.cs" />
+    <Compile Include="DTOs\Simplify\FundingPackageSimplifyDTO.cs" />
+    <Compile Include="DTOs\Simplify\ProjectSimplifyDTO.cs" />
+    <Compile Include="DTOs\Simplify\StatusUpdateSimplifyDTO.cs" />
+    <Compile Include="DTOs\Simplify\UserSimplifyDTO.cs" />
+    <Compile Include="DTOs\StatusUpdateDTO.cs" />
+    <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="Interfaces\IUserActions.cs" />
+    <Compile Include="Interfaces\IUserAPIService.cs" />
     <Compile Include="Migrations\20211129183556_sa.cs" />
     <Compile Include="Migrations\20211129183556_sa.designer.cs">
       <DependentUpon>20211129183556_sa.cs</DependentUpon>

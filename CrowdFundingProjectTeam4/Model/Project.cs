@@ -1,12 +1,11 @@
-﻿using CruwdFundingProjectTeam4.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrowdFundingProjectTeam4.Model
+namespace CruwdFundingProjectTeam4.Model
 {
     public class Project
     {
@@ -19,9 +18,20 @@ namespace CrowdFundingProjectTeam4.Model
         public DateTime DueDate { get; set; }
         public decimal MinFund { get; set; }
         public decimal MaxFund { get; set; }
-        public int UserId { get; set; }
-        public  List<UserProject> ListofBackers { get; set; } //check if virtual keyword is necessary 
-        public  List<FundingPackage> ListofFundingPackages { get; set; } //check if virtual keyword is necessary 
-        public  List<StatusUpdate> ListofStatusUpdates { get; set; } //check if virtual keyword is necessary 
+
+
+        public int? UserId { get; set; }
+        public User ProjectCreator { get; set; }
+
+        public List<UserProject> ListofBackers { get; set; }
+        public List<FundingPackage> ListofFundingPackages { get; set; } 
+        public List<StatusUpdate> ListofStatusUpdates { get; set; }
+
+        public Project()
+        {
+            ListofBackers = new List<UserProject>();
+            ListofFundingPackages = new List<FundingPackage>();
+            ListofStatusUpdates = new List<StatusUpdate>();
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿using CrowdFundingProjectTeam4.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -22,8 +21,15 @@ namespace CruwdFundingProjectTeam4.Model
         public DateTime? DateOfBirth { get; set; }
 
 
-        public virtual List<UserFundingPackage> AssignedFundingPackages { get; set; } = new();
-        public List<Project> CreatedProject { get; set; } = new();
-        public List<UserProject> FundedProject { get; set; } = new();
+        public virtual List<UserFundingPackage> AssignedFundingPackages { get; set; }
+        public List<Project> CreatedProject { get; set; }
+        public List<UserProject> FundedProject { get; set; }
+
+        public User()
+        {
+            AssignedFundingPackages = new List<UserFundingPackage>();
+            CreatedProject = new List<Project>();
+            FundedProject =new  List<UserProject>();
+        }
     }
 }
