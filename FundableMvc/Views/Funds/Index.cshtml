@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<p>Project and trending tables</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>User</th>
+            <th>MaxFund</th>
+            <th>DueDate</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var project in Model)
+         {
+                <tr>
+                    <td> <a href="/product/get/@project.Id"> @project.Name</a> </td>
+                    <td>   @project.MaxFund  </td>
+    
+                </tr>
+         }
+
+
+
+
+    </tbody>    
+</table>
