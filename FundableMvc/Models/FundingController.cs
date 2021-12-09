@@ -26,28 +26,10 @@ namespace FundableMvc.Models
     }
 
    
-        private readonly CrowdFundingTeam4DBContext _context;
-
-        public ProjectController(CrowdFundingTeam4DBContext context)
-        {
-            _context = context;
-        }
-
-
-    public async Task<IActionResult> Index(string Fund)
-    {
-
-        IQueryable<string> projectQuery = from m in _context.Project
-                                          orderby m.Fund
-                                          select m.Fund;
-
-        var projects = from m in _context.Project
-                       select m;
-
-                    
+       
         
 
         
         
-    }
+    
 }
