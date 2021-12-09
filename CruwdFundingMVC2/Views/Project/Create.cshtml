@@ -1,0 +1,49 @@
+﻿@page
+@model CruwdFundingProjectTeam4.Model.Project
+
+
+<h4 class="display-4 text-center"><b>Create Project</b></h4>
+<h6 class="text-center text-muted">Getting Started your own project by filling that form</h6>
+
+<form class="form-horizontal " asp-action="Create">
+    <div class="form-group">
+        <label class="control-label col-sm-2"> Title <span style="color:#FF0000">*</span> </label>
+        <div class="col-sm-11">
+            <input type="text" class="required form-control" id="FirstName" name="Title" placeholder="Title" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2"> Money Goal <span style="color:#FF0000">*</span></label>
+        <div class="col-sm-11">
+            <input type="number" class="required form-control" id="MoneyGoal" name="MoneyGoal" placeholder="MoneyGoal" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2"> Due Date <span style="color:#FF0000">*</span> </label>
+        <div class="col-sm-11">
+            <input type="date" class="required form-control" id="DueDate" name="DueDate" placeholder="DueDate" />
+        </div>
+    </div>
+    <input type="text" class="required form-control" id="id" name="if" placeholder="MoneyGoal" value="@TempData.Values"/>
+    <div class="form-group">
+        <label class="control-label col-sm-2"> Desciption </label>
+        <div class="col-sm-11">
+            <textarea class="form-control" name="Description" spellcheck="true" height="50px"></textarea>
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <div class="align-content-center text-center">
+        <input type="submit" id="next" value="Next >" name="button" placeholder="button" class="btn btn-lg btn-primary" style="display:none" />
+
+        <input type="submit" id="done" value="Cancel" name="button" placeholder="button" class="btn btn-lg btn-danger" />
+    </div>
+</form>
+
+
+<footer class="text-muted">
+    <span style="color:#FF0000"><i>* Required Options</i></span>
+</footer>

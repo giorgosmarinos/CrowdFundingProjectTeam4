@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowdFundingProjectTeam4", "CrowdFundingProjectTeam4\CrowdFundingProjectTeam4.csproj", "{E9159F7C-60F7-4447-A16F-BE6899F64651}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowdFundingProjectAPI", "CrowdFundingProjectAPI\CrowdFundingProjectAPI.csproj", "{1F8A9083-C622-4DEE-B500-F0797358E1C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrowdFundingProjectAPI", "CrowdFundingProjectAPI\CrowdFundingProjectAPI.csproj", "{1F8A9083-C622-4DEE-B500-F0797358E1C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CruwdFundingMVC2", "CruwdFundingMVC2\CruwdFundingMVC2.csproj", "{A874555B-6F47-44FB-8209-EB30AA920619}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1F8A9083-C622-4DEE-B500-F0797358E1C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F8A9083-C622-4DEE-B500-F0797358E1C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F8A9083-C622-4DEE-B500-F0797358E1C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A874555B-6F47-44FB-8209-EB30AA920619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A874555B-6F47-44FB-8209-EB30AA920619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A874555B-6F47-44FB-8209-EB30AA920619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A874555B-6F47-44FB-8209-EB30AA920619}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}  
+@model CruwdFundingProjectTeam4.Model.FundingPackage
+
+<h4 class="display-4 text-center"><b>Create Funding Package</b></h4>
+
+<form class="form-horizontal " asp-action="Create">
+    <div class="form-group">
+        <label class="control-label col-sm-2"> Reward <span style="color:#FF0000">*</span> </label>
+        <div class="col-sm-11">
+            <input type="text" asp-for="@Model.Reward" class="required form-control" id="Reward" name="Reward" placeholder="Reward" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2"> Value <span style="color:#FF0000">*</span></label>
+        <div class="col-sm-11">
+            <input type="number" asp-for="@Model.Value" class="required form-control" id="Value" name="Value" placeholder="Value" />
+        </div>
+    </div>
+    <input type="text" asp-for="@Model.ProjectId" class="required form-control" id="projectid" name="ProjectId" placeholder="@Model.ProjectId" />
+
+    <br />
+    <br />
+    <div class="align-content-center text-center">
+        <input type="submit"  asp-action="Submit" id="submit" value="Submit" name="button" placeholder="button" class="btn btn-lg btn-primary"/>
+
+        <input type="submit" asp-action="Done" id="done" value="Done" name="button" placeholder="button" class="btn btn-lg btn-danger" />
+    </div>
+</form>
+
+
+<footer class="text-muted">
+    <span style="color:#FF0000"><i>* Required Options</i></span>
+</footer>
