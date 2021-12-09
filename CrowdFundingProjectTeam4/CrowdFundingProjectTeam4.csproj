@@ -161,7 +161,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Category.cs" />
+    <Compile Include="DTOs\DTOConverters.cs" />
+    <Compile Include="DTOs\FundingPackageDTO.cs" />
+    <Compile Include="DTOs\ProjectDTO.cs" />
+    <Compile Include="DTOs\Simplify\FundingPackageSimplifyDTO.cs" />
+    <Compile Include="DTOs\Simplify\ProjectSimplifyDTO.cs" />
+    <Compile Include="DTOs\Simplify\StatusUpdateSimplifyDTO.cs" />
+    <Compile Include="DTOs\Simplify\UserSimplifyDTO.cs" />
+    <Compile Include="DTOs\StatusUpdateDTO.cs" />
+    <Compile Include="DTOs\UserDTO.cs" />
+    <Compile Include="Interfaces\IUserActions.cs" />
+    <Compile Include="Interfaces\IUserAPIService.cs" />
     <Compile Include="Migrations\20211129183556_sa.cs" />
     <Compile Include="Migrations\20211129183556_sa.designer.cs">
       <DependentUpon>20211129183556_sa.cs</DependentUpon>
@@ -176,6 +186,7 @@
     <Compile Include="Model\Project.cs" />
     <Compile Include="Model\StatusUpdate.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserFundingPackage.cs" />
     <Compile Include="Model\UserProject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -185,12 +196,14 @@
     <Compile Include="Service\IStatusService.cs" />
     <Compile Include="Services\FundableService.cs" />
     <Compile Include="Services\IFundableService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
@@ -198,5 +211,4 @@
     <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.21\build\net461\Microsoft.EntityFrameworkCore.Design.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.EntityFrameworkCore.Design.3.1.21\build\net461\Microsoft.EntityFrameworkCore.Design.props'))" />
   </Target>
-  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
 </Project>

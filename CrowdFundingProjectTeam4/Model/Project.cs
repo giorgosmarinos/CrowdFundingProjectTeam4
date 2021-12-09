@@ -18,12 +18,21 @@ namespace CrowdFundingProjectTeam4.Model
         public DateTime DueDate { get; set; }
         public decimal MinFund { get; set; }
         public decimal MaxFund { get; set; }
-        public int UserId { get; set; }
-        public virtual List<UserProject> ListofBackers { get; set; } //check if virtual keyword is necessary 
-        public virtual List<FundingPackage> ListofFundingPackages { get; set; } //check if virtual keyword is necessary 
-        public virtual List<StatusUpdate> ListofStatusUpdates { get; set; } //check if virtual keyword is necessary 
-        public string Genre { get; set; }
-        //public virtual List<ProjectGenres> ListofProjectGenres { get; set; } //check if virtual keyword is necessary 
 
+
+        public int? UserId { get; set; }
+        public User ProjectCreator { get; set; }
+
+        public List<UserProject> ListofBackers { get; set; }
+        public List<FundingPackage> ListofFundingPackages { get; set; } 
+        public List<StatusUpdate> ListofStatusUpdates { get; set; }
+        public string Genre { get; set; }
+
+        public Project()
+        {
+            ListofBackers = new List<UserProject>();
+            ListofFundingPackages = new List<FundingPackage>();
+            ListofStatusUpdates = new List<StatusUpdate>();
+        }
     }
 }
