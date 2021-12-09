@@ -93,7 +93,7 @@ namespace CrowdFundingProjectTeam4MVC.Controllers
         // POST: Project/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProjectId,Title,Description,MoneyGoal,CurrentBalance,DueDate,MinFund,MaxFund,Genre")] Project project)
+        public async Task<IActionResult> Edit(int id, [Bind("ProjectId,Title,Description,MoneyGoal,CurrentBalance,DueDate,MinFund,MaxFund,Genre,UserId")] Project project)
         {
             if (id != project.ProjectId)
             {
