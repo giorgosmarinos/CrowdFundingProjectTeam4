@@ -1,7 +1,9 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿@*{ ViewData["Title"] = "Home Page";
+    }
+
+       
 *@
-@{
+@{@model CrowdFundingProjectTeam4MVC.Models.ProjectGenreViewModel
 }
 
 <p>Project and trending tables</p>
@@ -13,21 +15,21 @@
             <th>User</th>
             <th>MaxFund</th>
             <th>DueDate</th>
-            
+
         </tr>
     </thead>
     <tbody>
         @foreach (var project in Model)
-         {
-                <tr>
-                    <td> <a href="/product/get/@project.Id"> @project.Name</a> </td>
-                    <td>   @project.MaxFund  </td>
-    
-                </tr>
-         }
+        {
+            <tr>
+                <td> <a href="/product/get/@project.Id"> @project.Name</a> </td>
+                <td>   @project.MaxFund  </td>
+
+            </tr>
+        }
 
 
 
 
-    </tbody>    
+    </tbody>
 </table>
