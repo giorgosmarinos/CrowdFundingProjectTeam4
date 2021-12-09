@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CrowdFundingProjectTeam4.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,15 +18,15 @@ namespace CruwdFundingProjectTeam4.Model
         public DbSet<StatusUpdate> StatusUpdate { get; set; }
         public object Category { get; internal set; }
 
-        public CrowdFundingTeam4DBContext(DbContextOptions<CrowdFundingTeam4DBContext> options) : base(options) { }
+        //public CrowdFundingTeam4DBContext(DbContextOptions<CrowdFundingTeam4DBContext> options) : base(options) { }
 
-        public CrowdFundingTeam4DBContext() { }
+       // public CrowdFundingTeam4DBContext() { }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
-            //optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=CrowdFundDB;Integrated Security=True");
+           // base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=CrowdFundDB;Integrated Security=True");
             //optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=CrowdFundDB;User ID=sa;Password=admin!@#123");
         }
 

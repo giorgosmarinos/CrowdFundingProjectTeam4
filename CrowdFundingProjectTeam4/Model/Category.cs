@@ -9,9 +9,9 @@ namespace CrowdFundingProjectTeam4.Model
 {
     public enum Category
     {
-        [Description ("Health")]
+        [Description("Health")]
         Health,
-        [Description ("Technology")]
+        [Description("Technology")]
         Technology,
 
     }
