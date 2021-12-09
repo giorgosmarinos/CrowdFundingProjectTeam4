@@ -9,34 +9,11 @@ namespace CrowdFundingProjectTeam4.Services
 {
     public class FundableService : IFundableService
     {
-
         private readonly CrowdFundingTeam4DBContext _db;
-
 
         public FundableService(CrowdFundingTeam4DBContext dbContext)
         {
             _db = dbContext;
-        }
-
-        public Project ReadProjectFund(int ProjectId, decimal Fund)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        List<FundingPackage> IFundableService.ReadProject(int ProjectId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Project ReadCategory(int ProjectId, Category category)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Project ReadProjectFund(int ProjectId)
-        {
-            throw new NotImplementedException();
         }
 
         public Project ReadProject(int ProjectId, Project project)
