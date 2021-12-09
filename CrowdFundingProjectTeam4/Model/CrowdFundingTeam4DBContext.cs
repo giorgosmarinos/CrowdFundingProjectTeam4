@@ -12,7 +12,7 @@ namespace CrowdFundingProjectTeam4.Model
         public DbSet<User> User { get; set; }
         public DbSet<Project> Project { get; set; }
         public DbSet<UserProject> UserProject { get; set; }
-        public DbSet<FundingPackage> FundingPackage { get; set; }
+        public DbSet<Project> FundingPackage { get; set; }
         public DbSet<StatusUpdate> StatusUpdate { get; set; }
         public object Category { get; internal set; }
 
@@ -28,7 +28,7 @@ namespace CrowdFundingProjectTeam4.Model
             modelBuilder.Entity<User>().ToTable("Users");
             modelBuilder.Entity<Project>().ToTable("Projects");
             modelBuilder.Entity<UserProject>().ToTable("UserProjects");
-            modelBuilder.Entity<FundingPackage>().ToTable("FundingPackages");
+            modelBuilder.Entity<Project>().ToTable("FundingPackages");
             modelBuilder.Entity<StatusUpdate>().ToTable("StatusUpdates");
 
             modelBuilder.Entity<User>()

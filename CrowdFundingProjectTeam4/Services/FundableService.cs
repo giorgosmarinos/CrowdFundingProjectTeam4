@@ -16,12 +16,23 @@ namespace CrowdFundingProjectTeam4.Services
             _db = dbContext;
         }
 
+        public Project ReadCategory(int ProjectId, Category category)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Project> ReadFundingPackages(int projectId)
+        {
+            throw new NotImplementedException();
+        }
+
         public Project ReadProject(int ProjectId, Project project)
         {
             var dbProject = _db.Project.Find(ProjectId);
             if (dbProject == null) throw new KeyNotFoundException();
             dbProject.Name = project.Name;
-            dbProject.Trending = project.Trending;
+            dbProject.MaxFund = project.MaxFund;
+            dbProject.MinFund = project.MinFund;
             dbProject.FundPackage = project.FundPackage;
             dbProject.Category = project.Category;
 
@@ -34,13 +45,17 @@ namespace CrowdFundingProjectTeam4.Services
 
 
 
-        public List<FundingPackage> ReadFundingPackages(int FundingPackageId)
+        public List<Project> ReadProject(int projectId)
         {
-            var FundingPackage = from FundingPackage in _db.Project
-                                 orderby FundingPackage.Count descending
-                                 select FundingPackage;
+            var Project = from MaxFund in _db.Project
+                                 orderby MaxFund.Count descending
+                                 select MaxFund;
 
         }
 
+        public Project ReadProjectFund(int ProjectId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

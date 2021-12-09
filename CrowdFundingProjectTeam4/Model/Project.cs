@@ -20,11 +20,10 @@ namespace CrowdFundingProjectTeam4.Model
         public decimal MaxFund { get; set; }
         public int UserId { get; set; }
         public virtual List<UserProject> ListofBackers { get; set; } //check if virtual keyword is necessary 
-        public virtual List<FundingPackage> ListofFundingPackages { get; set; } //check if virtual keyword is necessary 
+        public virtual List<Project> ListofFundingPackages { get; set; } //check if virtual keyword is necessary 
         public virtual List<StatusUpdate> ListofStatusUpdates { get; set; } //check if virtual keyword is necessary 
         public object Name { get; internal set; }
         public object Category { get; internal set; }
-        public object Trending { get; internal set; }
         public object FundPackage { get; internal set; }
         
     }

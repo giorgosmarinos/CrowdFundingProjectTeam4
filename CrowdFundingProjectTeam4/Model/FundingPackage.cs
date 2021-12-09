@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace CrowdFundingProjectTeam4.Model
 {
-    public class FundingPackage
+    public class Project
     {
         public int FundingPackageId { get; set; }
         public int Project { get; set;}
         public decimal Value { get; set; }
         public string Reward { get; set; }
-
-        
     }
-
-
 }

@@ -9,16 +9,16 @@ namespace CrowdFundingProjectTeam4.Services
 {
     interface IFundableService
     {
-        
-        public Project ReadCategory(int ProjectId, Category category);
 
-        public Project ReadProjectFund(int ProjectId);
-                      
+        Project ReadCategory(int ProjectId, Category category);
+
+        Project ReadProjectFund(int ProjectId);
+
         Project ReadProject(int ProjetcId, Project project);
-        
-        List<FundingPackage> ReadProject(int ProjectId);
-        
-        List<FundingPackage> ReadFundingPackages(int projectId);
 
-        
+        List<Project> ReadProject(int ProjectId);
+
+        List<Project> ReadFundingPackages(int projectId);
+
+    }
 }
