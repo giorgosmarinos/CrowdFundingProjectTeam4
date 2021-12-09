@@ -1,0 +1,52 @@
+﻿@model CrowdFundingProjectTeam4.Model.Project
+
+@{
+    ViewData["Title"] = "Fund";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Fund</h1>
+
+<h3>Fund this project</h3>
+<div>
+    <h4>Project</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MoneyGoal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CurrentBalance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MinFund)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MaxFund)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+    </dl>
+
+    <form asp-action="Fund">
+        <input type="hidden" asp-for="ProjectId" />
+        <input type="submit" value="Fund" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

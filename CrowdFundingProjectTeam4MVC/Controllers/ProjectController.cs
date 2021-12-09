@@ -93,7 +93,7 @@ namespace CrowdFundingProjectTeam4MVC.Controllers
         // POST: Project/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProjectId,Title,Description,MoneyGoal,CurrentBalance,DueDate,MinFund,MaxFund,UserId,Genre")] Project project)
+        public async Task<IActionResult> Edit(int id, [Bind("ProjectId,Title,Description,MoneyGoal,CurrentBalance,DueDate,MinFund,MaxFund,Genre")] Project project)
         {
             if (id != project.ProjectId)
             {
@@ -125,7 +125,72 @@ namespace CrowdFundingProjectTeam4MVC.Controllers
 
         private bool ProjectExists(int projectId)
         {
-            throw new NotImplementedException();
+            return _context.Project.Any(e => e.ProjectId == projectId);
+        }
+
+        // GET: Customer2/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var project = await _context.Project
+                .FirstOrDefaultAsync(m => m.ProjectId == id);
+            if (project == null)
+            {
+                return NotFound();
+            }
+
+            return View(project);
+        }
+
+        // GET: Customer2/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var customer = await _context.Project
+                .FirstOrDefaultAsync(m => m.ProjectId == id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            return View(customer);
+        }
+
+        // POST: Customer2/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var customer = await _context.Project.FindAsync(id);
+            _context.Project.Remove(customer);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        // GET: Customer2/Fund/5
+        public async Task<IActionResult> Fund(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var customer = await _context.Project
+                .FirstOrDefaultAsync(m => m.ProjectId == id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            return View(customer);
         }
     }
 }
