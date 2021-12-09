@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model CrowdFundingProjectTeam4MVC.Models.ProjectGenreViewModel
+
+<p>This is the home page for projects</p>
+@foreach (var item in Model.Projects)
+{
+    @item.Description
+    <br />
+}
+
+<form asp-controller="Project" asp-action="Index" method="get">
+    <p>
+        <select asp-for="ProjectGenre" asp-items="Model.Genres">
+            <option value="">All</option>
+        </select>
+        Title: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Projects[0].ProjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projects[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projects[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projects[0].Genre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Projects)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProjectId">Delete</a> |
+                    <a asp-action="Fund" asp-route-id="@item.ProjectId">Fund</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
