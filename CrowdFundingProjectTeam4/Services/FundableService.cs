@@ -31,11 +31,11 @@ namespace CrowdFundingProjectTeam4.Services
         {
             var dbProject = _db.Project.Find(ProjectId);
             if (dbProject == null) throw new KeyNotFoundException();
-            dbProject.Name = project.Name;
+            dbProject.Title = project.Title;
             dbProject.MaxFund = project.MaxFund;
             dbProject.MinFund = project.MinFund;
-            dbProject.FundPackage = project.FundPackage;
-            dbProject.Category = project.Category;
+            dbProject.ListofFundingPackages = project.ListofFundingPackages;
+            dbProject.Genre = project.Genre;
 
             object p = _db.SaveChanges();
             return dbProject;
@@ -43,16 +43,21 @@ namespace CrowdFundingProjectTeam4.Services
 
         }
 
-
-
-
-        public List<Project> ReadProject(int projectId)
+        public List<Project> ReadProject(int ProjectId)
         {
-            var Project = from MaxFund in _db.Project
-                                 orderby MaxFund.Count descending
-                                 select MaxFund;
-
+            throw new NotImplementedException();
         }
+
+
+
+
+        //public List<Project> ReadProject(int projectId)
+        //{
+        //    var Project = from CurrentBalance in _db.Project
+        //                         orderby CurrentBalance.Count descending
+        //                         select CurrentBalance;
+        //    return null;
+        //}
 
         public Project ReadProjectFund(int ProjectId)
         {

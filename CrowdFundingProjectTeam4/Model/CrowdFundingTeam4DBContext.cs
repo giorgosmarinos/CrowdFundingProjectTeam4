@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CruwdFundingProjectTeam4.Model
+namespace CrowdFundingProjectTeam4.Model
 {
     public class CrowdFundingTeam4DBContext : DbContext
     {
@@ -20,7 +20,7 @@ namespace CruwdFundingProjectTeam4.Model
 
         //public CrowdFundingTeam4DBContext(DbContextOptions<CrowdFundingTeam4DBContext> options) : base(options) { }
 
-       // public CrowdFundingTeam4DBContext() { }
+        //public CrowdFundingTeam4DBContext() { }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

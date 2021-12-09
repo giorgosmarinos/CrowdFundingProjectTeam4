@@ -1,4 +1,4 @@
-﻿using CruwdFundingProjectTeam4.Model;
+﻿using CrowdFundingProjectTeam4.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

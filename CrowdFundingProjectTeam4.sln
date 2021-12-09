@@ -5,13 +5,11 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowdFundingProjectTeam4", "CrowdFundingProjectTeam4\CrowdFundingProjectTeam4.csproj", "{E9159F7C-60F7-4447-A16F-BE6899F64651}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundableMvc", "FundableMvc\FundableMvc.csproj", "{C4EDEAF5-5E88-4340-9AF4-B1ACDB1CDC53}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrowdFundingProjectTeam4MVC", "CrowdFundingProjectTeam4MVC\CrowdFundingProjectTeam4MVC.csproj", "{FD4D9E19-5442-49E1-8825-40DDEA5FE172}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowdFundingProjectTeam4Api", "CrowdFundingProjectTeam4Api\CrowdFundingProjectTeam4Api.csproj", "{8565524A-AF60-4BAB-9551-6122B26CCA0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrowdFundingProjectTeam4Api", "CrowdFundingProjectTeam4Api\CrowdFundingProjectTeam4Api.csproj", "{8565524A-AF60-4BAB-9551-6122B26CCA0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowdFundingProjectAPI", "CrowdFundingProjectAPI\CrowdFundingProjectAPI.csproj", "{1F8A9083-C622-4DEE-B500-F0797358E1C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrowdFundingProjectAPI", "CrowdFundingProjectAPI\CrowdFundingProjectAPI.csproj", "{1F8A9083-C622-4DEE-B500-F0797358E1C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{E9159F7C-60F7-4447-A16F-BE6899F64651}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9159F7C-60F7-4447-A16F-BE6899F64651}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9159F7C-60F7-4447-A16F-BE6899F64651}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C4EDEAF5-5E88-4340-9AF4-B1ACDB1CDC53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4EDEAF5-5E88-4340-9AF4-B1ACDB1CDC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4EDEAF5-5E88-4340-9AF4-B1ACDB1CDC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4EDEAF5-5E88-4340-9AF4-B1ACDB1CDC53}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FD4D9E19-5442-49E1-8825-40DDEA5FE172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FD4D9E19-5442-49E1-8825-40DDEA5FE172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD4D9E19-5442-49E1-8825-40DDEA5FE172}.Release|Any CPU.ActiveCfg = Release|Any CPU

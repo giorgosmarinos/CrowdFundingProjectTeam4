@@ -1,4 +1,5 @@
-﻿using CruwdFundingProjectTeam4.DTOs;
+﻿using CrowdFundingProjectTeam4.Model;
+using CruwdFundingProjectTeam4.DTOs;
 using CruwdFundingProjectTeam4.DTOs.Simplify;
 using CruwdFundingProjectTeam4.Interfaces;
 using CruwdFundingProjectTeam4.Model;
