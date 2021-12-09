@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace FundableMvc.Models
 {
-    public class FundingController
+    public class Funding
     {
-        public List<FundingController> Project { get; set; }
+        public List<Funding> Project { get; set; }
         public List<int> ProjectIds { get; set; }
         
 
-        public FundingController(SelectList funding)
+        public Funding(SelectList funding)
         {
             Funding = funding;
         }

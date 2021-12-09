@@ -1,33 +1,51 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model CrowdFundingProjectTeam4MVC.Models.ProjectGenreViewModel
+@model FundableMvc.Models.FundingViewModel
 
 
 <p>Project and trending tables</p>
 
-<table class="table">
+<<table class="table">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>User</th>
-            <th>MaxFund</th>
-            <th>DueDate</th>
-
+            <th>
+                @Html.DisplayNameFor(model => model.Projects[0].ProjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projects[0].Creator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projects[0].Funds)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projects[0].DueDate)
+            </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var project in Model)
+        @foreach (var item in Model.Projects)
         {
             <tr>
-                <td> <a href="/product/get/@project.Id"> @project.Name</a> </td>
-                <td>   @project.MaxFund  </td>
-
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Creator)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Funds)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueDate)
+                </td>
+                <td>
+                    
+                    <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
+                   
+                </td>
             </tr>
         }
-
-
-
-
     </tbody>
 </table>
