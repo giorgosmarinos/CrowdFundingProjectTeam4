@@ -20,9 +20,17 @@ namespace CrowdFundingProjectTeam4.Model
         public string Email { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public virtual List<Project> CreatedProject { get; set; } //check if it is necessary
-        public virtual List<UserProject> FundedProject { get; set; } 
+        public virtual List<UserProject> FundedProject { get; set; }
+
+        public virtual List<UserFundingPackage> AssignedFundingPackages { get; set; }
 
 
+        public User()
+        {
+            AssignedFundingPackages = new List<UserFundingPackage>();
+            CreatedProject = new List<Project>();
+            FundedProject = new List<UserProject>();
+        }
     }
 }
 

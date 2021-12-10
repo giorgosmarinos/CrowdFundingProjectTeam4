@@ -12,13 +12,14 @@ namespace CrowdFundingProjectTeam4.Model
         public DbSet<User> User { get; set; }
         public DbSet<Project> Project { get; set; }
         public DbSet<UserProject> UserProject { get; set; }
+        public DbSet<UserFundingPackage> UserFundingPackage { get; set; }
         public DbSet<FundingPackage> FundingPackage { get; set; }
         public DbSet<StatusUpdate> StatusUpdate { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=RegenCrm;Integrated Security=True");
-            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=CrowdFundDB;User ID=sa;Password=admin!@#123");
+            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=CrowdFundDBB;User ID=sa;Password=admin!@#123");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

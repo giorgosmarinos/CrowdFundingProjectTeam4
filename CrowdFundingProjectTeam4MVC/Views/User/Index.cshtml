@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model CrowdFundingProjectTeam4.Model.User
+
+<h4><u><b>User Information</b></u></h4>
+<div>
+    <p>First Name : @Model.FirstName</p>
+    <p>Last Name : @Model.LastName</p>
+    <p>Email : @Model.Email</p>
+    <p>BirthDay : @Model.DateOfBirth.Value.ToString("dd MMM yyyy")</p>
+</div>
+
+<h5><u><b>Created Project</b></u></h5>
+<div>
+    @foreach (var item in Model.CreatedProject)
+    {
+        <p> @item.Title</p>
+    }
+</div>
+
+<h5><u><b>Funded Project</b></u></h5>
+<div>
+    @foreach (var item in Model.FundedProject)
+    {
+        <p> @item.Project.Title</p>
+    }
+</div>
+
+<h5><u><b>Funded Pacakges</b></u></h5>
+<div>
+    @foreach (var item in Model.AssignedFundingPackages)
+    {
+        <p> @item.FundingPackage.Value - @item.FundingPackage.Reward</p>
+    }
+</div>

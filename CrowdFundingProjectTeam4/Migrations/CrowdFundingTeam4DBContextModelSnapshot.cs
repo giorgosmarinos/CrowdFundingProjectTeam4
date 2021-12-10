@@ -61,6 +61,9 @@ namespace CrowdFundingProjectTeam4.Migrations
                     b.Property<DateTime>("DueDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Genre")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("MaxFund")
                         .HasColumnType("decimal(18,2)");
 
@@ -138,6 +141,28 @@ namespace CrowdFundingProjectTeam4.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("CrowdFundingProjectTeam4.Model.UserFundingPackage", b =>
+                {
+                    b.Property<int>("UserFundingPackageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("FundingPackageId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserFundingPackageId");
+
+                    b.HasIndex("FundingPackageId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserFundingPackage");
+                });
+
             modelBuilder.Entity("CrowdFundingProjectTeam4.Model.UserProject", b =>
                 {
                     b.Property<int>("Id")
@@ -183,6 +208,17 @@ namespace CrowdFundingProjectTeam4.Migrations
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CrowdFundingProjectTeam4.Model.UserFundingPackage", b =>
+                {
+                    b.HasOne("CrowdFundingProjectTeam4.Model.FundingPackage", "FundingPackage")
+                        .WithMany()
+                        .HasForeignKey("FundingPackageId");
+
+                    b.HasOne("CrowdFundingProjectTeam4.Model.User", "User")
+                        .WithMany("AssignedFundingPackages")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("CrowdFundingProjectTeam4.Model.UserProject", b =>

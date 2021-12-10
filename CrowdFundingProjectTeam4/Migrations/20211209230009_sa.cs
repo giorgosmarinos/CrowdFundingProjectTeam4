@@ -36,7 +36,8 @@ namespace CrowdFundingProjectTeam4.Migrations
                     DueDate = table.Column<DateTime>(nullable: false),
                     MinFund = table.Column<decimal>(nullable: false),
                     MaxFund = table.Column<decimal>(nullable: false),
-                    UserId = table.Column<int>(nullable: false)
+                    UserId = table.Column<int>(nullable: false),
+                    Genre = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -118,6 +119,32 @@ namespace CrowdFundingProjectTeam4.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "UserFundingPackage",
+                columns: table => new
+                {
+                    UserFundingPackageId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<int>(nullable: true),
+                    FundingPackageId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserFundingPackage", x => x.UserFundingPackageId);
+                    table.ForeignKey(
+                        name: "FK_UserFundingPackage_FundingPackages_FundingPackageId",
+                        column: x => x.FundingPackageId,
+                        principalTable: "FundingPackages",
+                        principalColumn: "FundingPackageId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_UserFundingPackage_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_FundingPackages_ProjectId",
                 table: "FundingPackages",
@@ -132,6 +159,16 @@ namespace CrowdFundingProjectTeam4.Migrations
                 name: "IX_StatusUpdates_ProjectId",
                 table: "StatusUpdates",
                 column: "ProjectId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserFundingPackage_FundingPackageId",
+                table: "UserFundingPackage",
+                column: "FundingPackageId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserFundingPackage_UserId",
+                table: "UserFundingPackage",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserProjects_ProjectId",
@@ -153,13 +190,16 @@ namespace CrowdFundingProjectTeam4.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "FundingPackages");
-
-            migrationBuilder.DropTable(
                 name: "StatusUpdates");
 
             migrationBuilder.DropTable(
+                name: "UserFundingPackage");
+
+            migrationBuilder.DropTable(
                 name: "UserProjects");
+
+            migrationBuilder.DropTable(
+                name: "FundingPackages");
 
             migrationBuilder.DropTable(
                 name: "Projects");

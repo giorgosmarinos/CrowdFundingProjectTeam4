@@ -1,5 +1,5 @@
 ﻿using CrowdFundingProjectTeam4.Model;
-using CrowdFundingProjectTeam4.Service;
+using CrowdFundingProjectTeam4.Interfaces;
 using CrowdFundingProjectTeam4MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -33,9 +33,12 @@ namespace CrowdFundingProjectTeam4MVC.Controllers
 
         private readonly CrowdFundingTeam4DBContext _context;
 
-        public ProjectController(CrowdFundingTeam4DBContext context)
+        private readonly IUserService _service;
+
+        public ProjectController(CrowdFundingTeam4DBContext context, IUserService service)
         {
             _context = context;
+            _service = service;
         }
 
         // GET:Project
@@ -191,6 +194,26 @@ namespace CrowdFundingProjectTeam4MVC.Controllers
             }
 
             return View(customer);
+        }
+
+        
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Project project)
+        {   // TODO - Make the thinking when the project is null OR not the required => return to Basic View else Proceed to CreatFundingPackage View
+            if (project.Title == "" || project.MoneyGoal == 0m || project.DueDate == DateTime.MinValue)
+            {
+                return RedirectToAction("Index", "User");
+            }
+
+            _service.CreateProject(project, 5);
+            //_service.ReadProjectsByID();
+            return RedirectToAction("Create", "FundingPackage", new { project.ProjectId });
         }
     }
 }

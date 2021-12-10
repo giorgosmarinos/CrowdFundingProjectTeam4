@@ -2,7 +2,7 @@
 
 namespace CrowdFundingProjectTeam4.Migrations
 {
-    public partial class sa2 : Migration
+    public partial class sad : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

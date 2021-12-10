@@ -161,13 +161,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20211129183556_sa.cs" />
-    <Compile Include="Migrations\20211129183556_sa.designer.cs">
-      <DependentUpon>20211129183556_sa.cs</DependentUpon>
+    <Compile Include="Interfaces\IUserActions.cs" />
+    <Compile Include="Migrations\20211209230009_sa.cs" />
+    <Compile Include="Migrations\20211209230009_sa.designer.cs">
+      <DependentUpon>20211209230009_sa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20211206135527_sa2.cs" />
-    <Compile Include="Migrations\20211206135527_sa2.designer.cs">
-      <DependentUpon>20211206135527_sa2.cs</DependentUpon>
+    <Compile Include="Migrations\20211209230244_sad.cs" />
+    <Compile Include="Migrations\20211209230244_sad.designer.cs">
+      <DependentUpon>20211209230244_sad.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\CrowdFundingTeam4DBContextModelSnapshot.cs" />
     <Compile Include="Model\CrowdFundingTeam4DBContext.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="Model\Project.cs" />
     <Compile Include="Model\StatusUpdate.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserFundingPackage.cs" />
     <Compile Include="Model\UserProject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -182,6 +184,7 @@
     <Compile Include="Service\ProjectService.cs" />
     <Compile Include="Service\StatusService.cs" />
     <Compile Include="Service\IStatusService.cs" />
+    <Compile Include="Service\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
